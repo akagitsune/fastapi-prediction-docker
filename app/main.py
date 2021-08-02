@@ -11,15 +11,34 @@ class ReqItem(BaseModel):
     sex: int
     cp: int
     trestbps: int
-    chol: int 
+    chol: int
     fbs: int
     restecg: int 
     thalach: int 
     exang: int
-    oldpeak: float 
+    oldpeak: float
     slope: int 
     ca: int 
     thal: int 
+
+
+    class Config:
+        schema_extra = {
+                "example": {'age': 66,
+                            'sex': 1,
+                            'cp': 0,
+                            'trestbps': 160,
+                            'chol': 228,
+                            'fbs': 0,
+                            'restecg': 0,
+                            'thalach': 138,
+                            'exang': 0,
+                            'oldpeak': 2.3,
+                            'slope': 2,
+                            'ca': 0,
+                            'thal': 1
+                        } 
+                }
 
 clf = load_model('model/model.joblib')
 
